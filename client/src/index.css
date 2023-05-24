@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    background: #162434;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.header-text{
+    @apply md:text-8xl text-5xl text-[#D9D9D9] 
+}
+
+.subheader-text {
+    @apply md:text-5xl text-2xl text-[#B0A8A8]
+}
