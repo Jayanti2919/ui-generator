@@ -1,20 +1,22 @@
 import React from "react";
 import AstronautCanvas from "../canvas/Astronaut";
 import StarsCanvas from "../canvas/Stars";
-import { fadeIn, textVariant } from "../helpers/motion";
-import { motion } from "framer-motion";
+import { headContainerAnimation, headContentAnimation, headTextAnimation } from "../helpers/motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSnapshot } from "valtio";
 import state from "../states";
 const Hero = () => {
   const snap = useSnapshot(state);
   return (
+    <AnimatePresence> 
+
     <div className="flex w-full h-screen flex-col-reverse md:flex-row relative py-24 items-center justify-center md:ml-14">
       <motion.div
-        variants={textVariant()}
+        {...headContainerAnimation}
         className="flex flex-col gap-6 flex-wrap"
       >
         <img src="./logo.svg" alt="" className="h-20 w-20" />
-        <motion.h1 variants={fadeIn("", "", 0, 1)} className="header-text">
+        <motion.h1 {...headTextAnimation} className="header-text">
           UI <br /> Generator
         </motion.h1>
         <p className="subheader-text max-w-xs md:max-w-md">
@@ -34,6 +36,7 @@ const Hero = () => {
       <StarsCanvas />
       <AstronautCanvas />
     </div>
+    </AnimatePresence>
   );
 };
 export default Hero;
