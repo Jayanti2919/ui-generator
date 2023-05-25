@@ -1,18 +1,20 @@
 import React, {Suspense, useRef, useState} from 'react'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { meshBounds, Preload, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
+import { meshBounds, Preload, OrbitControls, useGLTF } from '@react-three/drei'
 import * as random from 'maath/random/dist/maath-random.esm'
 
 const Astronaut = () => {
   const astronaut = useGLTF('./Astronaut2/scene.gltf')
+  const ref = useRef();
+
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black"/>
-      <pointLight intensity={1} position={[5, 10, -5]}/>
+      <hemisphereLight intensity={0.5} groundColor="black"/>
+      <pointLight intensity={1} position={[18, 3, -5]}/>
       <spotLight 
-      position={[0,0,0]}
-      angle={0.12}
+      position={[0,-40,80]}
+      angle={0}
       penumbra={1}
       intensity={1}
       castShadow
@@ -21,8 +23,9 @@ const Astronaut = () => {
       <primitive
         object={astronaut.scene}
         scale={0.06}
-        position={[8, -8, -10]}
+        position={[6, -8, -10]}
         rotation={[0, Math.PI/2, 0]}
+        ref={ref}
       />
     </mesh>
   )
@@ -38,8 +41,6 @@ const AstronautCanvas = () =>{
   >
     <Suspense fallback={null}>
       <OrbitControls 
-        autoRotate
-        autoRotateSpeed={3}
         enableZoom={false}
         enableRotate={true}
         maxPolarAngle={Math.PI / 2}

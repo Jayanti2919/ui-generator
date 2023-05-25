@@ -16,5 +16,5 @@ body {
 }
 
 .subheader-text {
-    @apply md:text-5xl text-2xl text-[#B0A8A8]
+    @apply md:text-xl text-lg text-[#B0A8A8]
 }
