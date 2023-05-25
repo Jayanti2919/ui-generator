@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <AnimatePresence> 
 
-    <div className="flex w-full h-screen flex-col-reverse md:flex-row relative py-24 items-center justify-center md:ml-14">
+    <div className="flex w-full h-screen flex-col md:flex-row relative py-24 items-center justify-center md:ml-14">
       <motion.div
         {...headContainerAnimation}
         className="flex flex-col gap-6 flex-wrap"

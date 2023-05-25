@@ -1,8 +1,11 @@
 import React from 'react'
+import { useSnapshot } from 'valtio'
+import state from '../states';
 
 const ImageGen = () => {
+  const snap = useSnapshot(state);
   return (
-    <div>ImageGen</div>
+    <div className={`${state === 'imagegen' ? 'block' : 'hidden'}`}>ImageGen</div>
   )
 }
 

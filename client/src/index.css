@@ -12,9 +12,21 @@ body {
 }
 
 .header-text{
-    @apply md:text-8xl text-5xl text-[#D9D9D9] 
+    @apply md:text-8xl text-5xl text-[#D9D9D9] font-bold
 }
 
 .subheader-text {
     @apply md:text-xl text-lg text-[#B0A8A8]
+}
+
+.second-headings {
+    @apply text-4xl text-[#D9D9D9] font-bold
+}
+
+.normal-text {
+    @apply text-lg md:max-w-xl max-w-xs text-[#B0A8A8]
+}
+
+.form-text {
+    @apply text-lg md:max-w-xl max-w-xs text-secondary
 }
