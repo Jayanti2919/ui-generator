@@ -11,6 +11,20 @@ body {
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 0.1em;
+    background-color: transparent;
+  }
+  
+  /* Optional: Add a smooth transition effect */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(99, 97, 97, 0.2);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(168, 160, 160, 0.2);
+  }
+
 .header-text{
     @apply md:text-8xl text-5xl text-[#D9D9D9] font-bold
 }

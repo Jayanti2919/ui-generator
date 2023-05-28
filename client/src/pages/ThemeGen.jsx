@@ -4,6 +4,7 @@ import state from '../states'
 import { AnimatePresence, motion } from 'framer-motion'
 import { fadeAnimation, headContainerAnimation, headTextAnimation } from '../helpers/motion'
 import { slideAnimation } from '../helpers/motion'
+import ColorPicker from '../components/ColorPicker'
 
 const ThemeGen = () => {
   const snap = useSnapshot(state);
@@ -28,7 +29,7 @@ const ThemeGen = () => {
         For a great website you need great planning. So, let's start with selecting a color for your website! Enter a prompt describing what your website is about to get an AI generated color scheme.
       </p>
 
-      <div className='flex pt-5'>
+      <div className='flex pt-5 justify-between px-10 md:flex-row flex-col'>
         <form action="" onSubmit={handleFormSubmit} ref={formref}>
           <div className='flex flex-col gap-5'>
           <label htmlFor="" className='form-text'>Generate a color scheme for a website ... </label>
@@ -43,6 +44,13 @@ const ThemeGen = () => {
           </button>
           </div>
         </form>
+
+        <div>
+          <h2 className='form-text'>
+            Have a color in mind?
+          </h2>
+          <ColorPicker />
+        </div>
       </div>
     </div>
   )
