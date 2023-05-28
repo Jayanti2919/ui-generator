@@ -6,11 +6,26 @@ import { fadeAnimation, headContainerAnimation, headTextAnimation } from '../hel
 import { slideAnimation } from '../helpers/motion'
 import ColorPicker from '../components/ColorPicker'
 
+const ColorCard = ({params}) => {
+  return(
+    <div className='flex'>
+      {params.map((color) => (
+        <div style={{ backgroundColor: `#${color}` }}
+          className='px-6 py-2'
+        >
+          #{color}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 const ThemeGen = () => {
   const snap = useSnapshot(state);
   const formref = useRef();
 
   const [prompt, setPrompt] = useState('')
+  const [color, setColor] = useState([])
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -51,6 +66,10 @@ const ThemeGen = () => {
           </h2>
           <ColorPicker />
         </div>
+      </div>
+
+      <div>
+        <ColorCard params={color}/>
       </div>
     </div>
   )
