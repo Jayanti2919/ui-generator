@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React, { useState, useRef } from 'react'
 import { useSnapshot } from 'valtio'
 import state from '../states'
@@ -57,6 +58,15 @@ const ThemeGen = () => {
           >
             Generate
           </button>
+          <button
+          className="w-fit bg-[#B0A8A8] px-5 py-3 rounded-xl hover:bg-white"
+          onClick={() => {
+            state.currPage = "home";
+          }}
+        >
+          {" "}
+          Go Back{" "}
+        </button>
           </div>
         </form>
 
