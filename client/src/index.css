@@ -34,7 +34,7 @@ body {
 }
 
 .second-headings {
-    @apply text-4xl text-[#D9D9D9] font-bold
+    @apply md:text-4xl text-2xl text-[#D9D9D9] font-bold
 }
 
 .normal-text {
